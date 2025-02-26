@@ -35,6 +35,20 @@ const searchSong =() =>
 
 const displaySong = songs => {
     const songContainer = document.getElementById("song-container")
-
+     songContainer.innerHTML = ''
+              songs.forEach(song =>{
+                console.log(song)
+                console.log(song.album.cover_medium)
+                const songDiv = document.createElement('div')
+                songDiv.className = "single-result row align-items-center my-3 p-3"
+                songDiv.innerHTML = `
+                <div class="col-lg-2 text-center">
+                <img class src="${song.album.cover_medium}
+                style="heigth: 50px ;"alt="">
+                </div>
+                <div class="col-lg-4 text-center">
+                <h3 class="lyrics-name">${song.title}</h3>"
+                </div>
+                `
 
 }
